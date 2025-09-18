@@ -38,25 +38,37 @@ const App = () => {
       return;
     }
 
+    if (value === ",") {
+      setExpression((prev) => prev + ".");
+      return;
+    }
+
+    if (value === "DEL") {
+      setExpression((prev) => prev.slice(0, -1));
+      return;
+    }
+
     setExpression((prev) => prev + value);
   };
 
   return (
-    <main className="text-black text-4xl flex flex-col gap-y-3 justify-end bg-black h-screen p-3">
-      <section>
-        <input
-          type="text"
-          className="border border-black w-full p-3 rounded-xl"
-          value={expression}
-        />
-      </section>
-      <section className="grid grid-cols-4 gap-3">
-        {buttons.map((item, index) => (
-          <Button key={index} onClick={() => handleClickButton(item.value)}>
-            {item.value}
-          </Button>
-        ))}
-      </section>
+    <main className="flex justify-center items-center w-full h-screen">
+      <div className="text-black text-4xl flex flex-col gap-y-3 justify-end bg-black h-screen p-3 lg:w-1/6 lg:h-1/2 lg:1/2 lg:rounded-3xl">
+        <section>
+          <input
+            type="text"
+            className="border border-black w-full p-3 rounded-xl"
+            value={expression}
+          />
+        </section>
+        <section className="grid grid-cols-4 gap-3">
+          {buttons.map((item, index) => (
+            <Button key={index} onClick={() => handleClickButton(item.value)}>
+              {item.value}
+            </Button>
+          ))}
+        </section>
+      </div>
     </main>
   );
 };

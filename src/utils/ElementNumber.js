@@ -6,7 +6,7 @@ const ElementButton = [
   },
   {
     id: 2,
-    value: "test",
+    value: "DEL",
     category: "operator",
   },
   {
