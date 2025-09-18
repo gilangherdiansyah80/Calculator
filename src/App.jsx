@@ -53,7 +53,7 @@ const App = () => {
 
   return (
     <main className="flex justify-center items-center w-full h-screen">
-      <div className="text-black text-4xl flex flex-col gap-y-3 justify-end bg-black h-screen p-3 lg:w-1/6 lg:h-1/2 lg:1/2 lg:rounded-3xl">
+      <div className="text-black text-4xl flex flex-col gap-y-3 justify-end bg-black h-screen p-3 md:w-1/2 md:h-1/2 lg:w-1/6 lg:h-1/2 lg:1/2 md:rounded-3xl">
         <section>
           <input
             type="text"
